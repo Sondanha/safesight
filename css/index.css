@@ -1,0 +1,314 @@
+.top__section {
+  background-color: var(--color-background2);
+  padding-top: 2rem;
+}
+.top__box {
+  display: flex;
+  justify-content: space-around;
+}
+.top__title {
+  word-break: keep-all;
+  margin-top: 3rem;
+  font-size: 2rem;
+}
+.top__img {
+  height: 12rem;
+}
+
+/* 메인 레이아웃 */
+.main__box {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.main__side {
+  display: flex;
+  flex: 0 0 23%;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+}
+.main__middle {
+  flex: 0 0 50%;
+}
+.main__side__container {
+  flex: 1;
+  min-height: 12rem;
+  border: 1px solid var(--color-text-main);
+  border-radius: 8px;
+  background-color: var(--color-box);
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 보호구 */
+.main__gear {
+  margin-top: 2rem;
+}
+.main__gear__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.gear__row {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.gear__row a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gear__img {
+  transition: transform 0.3s ease;
+}
+.gear__img:hover {
+  transform: translateY(-0.7rem);
+}
+.gear__img {
+  height: 5rem;
+}
+.gear__title {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+a:hover .gear__title {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 뉴스 */
+#news-widget {
+  font-size: 1.2rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1.4;
+  color: var(--color-text-main);
+}
+.news-location {
+  font-weight: bold;
+}
+.news-description {
+  text-align: center;
+  word-break: keep-all;
+}
+
+/* 매핑된 안전수칙 */
+#safety-guideline-widget {
+  font-size: 1.2rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1.4;
+}
+.news-guideline-title {
+  font-weight: bold;
+  color: red;
+}
+.news-guideline {
+  color: var(--color-text-main);
+  text-align: center;
+  word-break: keep-all;
+}
+
+/* satesight(미리보기 화면) */
+.preview__container {
+  position: relative;
+  width: 100%;
+  height: 25rem;
+  border: 1px solid var(--color-text-main);
+  overflow: hidden;
+  border-radius: 8px;
+}
+.preview__container iframe {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.preview__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+/* 날씨 */
+#weather-widget {
+  font-size: 1.2rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  color: var(--color-text-main);
+  line-height: 1.4;
+  word-break: keep-all;
+}
+.weather-regionName {
+  font-weight: bold;
+}
+.weather-now {
+  text-align: center;
+  word-break: keep-all;
+}
+
+/* 안전 메시지 */
+#safetymessage-widget {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 1rem;
+  word-break: keep-all;
+  color: var(--color-text);
+  transition: opacity 0.5s ease;
+}
+#safetymessage-widget.hidden {
+  opacity: 0;
+}
+
+/* 하단 응원 메시지 */
+.bottom__section {
+  margin-top: 3rem;
+}
+.bottom__box {
+  display: flex;
+  justify-content: center;
+}
+
+/* footer */
+footer {
+  box-sizing: border-box;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--color-background);
+  border-top: 1px solid var(--color-line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+}
+footer p {
+  font-size: 0.7rem;
+}
+.footer__center {
+  display: flex;
+  align-items: center;
+}
+.footer__center img {
+  height: 1.5rem;
+}
+.footer__center h1 {
+  font-size: 0.8rem;
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .main__gear {
+    margin-top: 0;
+  }
+  .main__gear__container {
+    display: none;
+  }
+  .main__box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .main__middle {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: none;
+  }
+  .preview__container {
+    width: 100%;
+    max-width: none;
+    height: 25rem;
+    aspect-ratio: 16 / 9;
+  }
+  .main__side {
+    flex-direction: row;
+    width: 100%;
+    max-width: none;
+  }
+  .main__side:first-of-type {
+    order: 2;
+  }
+  .main__side:last-of-type {
+    order: 3;
+  }
+  .main__side {
+    flex-direction: column;
+  }
+  footer {
+    padding: 1rem 0.5rem;
+  }
+}
+
+/* 태블릿 */
+@media (max-width: 1023px) and (min-width: 767px) {
+  .main__box {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .main__middle {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: none;
+  }
+  .preview__container {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+  .main__side {
+    flex-direction: row;
+    width: 100%;
+    max-width: none;
+  }
+  .main__side:first-of-type {
+    order: 2;
+  }
+  .main__side:last-of-type {
+    order: 3;
+  }
+
+  .main__gear__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .row1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+  }
+  .row2 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 100%;
+  }
+  .gear__row a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

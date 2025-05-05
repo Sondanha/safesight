@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --color-background: var(--color-white);
+  --color-background2: var(--color-beige);
+  --color-accent: var(--color-yellow);
+  --color-text-main: var(--color-navy);
+  --color-text: var(--color-gray);
+  --color-line: var(--color-lightgray);
+  --color-box: var(--color-beige);
+
+  --color-white: #ffffff;
+  --color-beige: #fcfaf8;
+  --color-navy: #002540;
+  --color-yellow: #feb326;
+  --color-brightyellow: #f8c25e;
+  --color-lightgray: #dde2e6;
+  --color-gray: #3d3d3d;
+}
+body {
+  background-color: var(--color-background);
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  color: var(--color-text-main);
+}
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+/* 헤더 다음 메인 태그 사용하기 */
+main {
+  margin: 4rem 0;
+}
+/* 내부 요소는 container로 감싸기 */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* 헤더 스타일 */
+.header {
+  box-sizing: border-box;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 4rem;
+  position: fixed;
+  z-index: 100;
+}
+.header--left {
+  display: flex;
+  align-items: center;
+}
+.header__logo__img {
+  height: 3rem;
+  transition: transform 0.3s ease;
+}
+.header__logo__img:hover {
+  transform: rotate(-5deg);
+}
+.header__title {
+  font-size: 1.3rem;
+  transition: transform 0.3s;
+}
+.header__title:hover {
+  transform: scale(1.05);
+}
+.header--right {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.header__btn {
+  background-color: transparent;
+  height: 2.4rem;
+  width: 5.4rem;
+  color: var(--color-text-main);
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  transition: border 0.3s ease;
+}
+.header__btn:hover {
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  background-color: var(--color-line);
+  transition: 0.2s ease-in-out;
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .header {
+    padding: 0.6rem 0.5rem;
+  }
+  .container {
+    width: 95%;
+  }
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>signup</title>
+
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/signup.css" />
+
+    <link rel="shortcut icon" href="./img/logo_i.ico" type="image/x-icon" />
+    
+    <script defer src="/js/header.js"></script>
+    <script defer src="/js/signup.js"></script>
+  </head>
+
+  <body>
+    <div id="header-placeholder"></div>
+    <main>
+      <div class="container">
+        <div class="title">
+          <h1>회원가입</h1>
+        </div>
+        <div class="select__box">
+          <p>회원 유형을 선택해주세요</p>
+          <div class="select-membership">
+            <button class="select__button" id="select__business">사업장 가입</button>
+            <button class="select__button" id="select__common">일반 가입</button>
+          </div>
+        <div class="input__box">
+          <p><h2>사업장 관리번호</h2><input type="text" name="userid" id="signup-userid" /></p>
+        <p><h2>아이디</h2> <input type="text" name="userid" id="signup-userid" /></p>
+        <p>
+          <h2>비밀번호</h2>
+          <input type="password" name="password" id="signup-password" />
+        </p>
+        <p><h2>이름</h2> <input type="text" name="name" id="signup-name" /></p>
+        <p><h2>휴대전화</h2><input type="text" name="hp" id="hp" maxlength="20" /></p>
+        <p><h2>이메일</h2><input type="email" name="email" id="signup-email" /></p>
+        <p><button type="submit" id="signup-button">회원가입하기</button></p>
+      </div>
+        <p><h3>이미 회원이신가요?</h3> <a href="/login.html">로그인하기</a></p>
+    </div>
+    </main>
+  </body>
+</html>
