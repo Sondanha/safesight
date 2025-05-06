@@ -9,7 +9,6 @@ const app = express();
 const PORT = 3001;
 
 app.use(cors({ origin: true, credentials: true }));
-
 app.use(express.json());
 
 app.get("/api/region", async (req, res) => {
@@ -37,11 +36,13 @@ app.get("/api/region", async (req, res) => {
         .json({ error: "Kakao API 요청 실패", kakaoError: errorText });
     }
 
-    // const data = await kakaoRes.json();
-    // res.json(data);
+    const data = await kakaoRes.json();
+
     if (!data.documents || data.documents.length === 0) {
       return res.status(404).json({ error: "지역 정보를 찾을 수 없습니다." });
     }
+
+    res.json(data);
   } catch (err) {
     console.error("Kakao API 요청 중 오류:", err);
     res.status(500).json({ error: "서버 오류", detail: err.message });
