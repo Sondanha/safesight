@@ -5,49 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login</title>
     <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/login-signup.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
 
     <link rel="shortcut icon" href="./img/logo_i.ico" type="image/x-icon" />
 
     <script defer src="/js/header.js"></script>
     <script defer src="/js/login.js"></script>
+    <script defer src="/js/footer.js"></script>
   </head>
-
   <body>
-    <div id="header-placeholder"></div>
-    <main>
-      <div class="container">
-        <div class="bg-img">
-          <img src="" alt="" />
-        </div>
-        <div class="login-box">
-          <div class="title">
-            <h1>로그인</h1>
+    <div class="wrapper">
+      <div id="header-placeholder"></div>
+      <main>
+        <div class="container">
+          <div class="display__flex">
+            <section class="section__right">
+              <div class="bg__text">
+                <h1>우리는</h1>
+                <h1><span>안전</span>을 바라보는</h1>
+                <h1>safe sight입니다</h1>
+              </div>
+            </section>
+
+            <section class="section__left">
+              <div class="login__box">
+                <div class="title-box">
+                  <h1>로그인</h1>
+                </div>
+                <div class="input-box">
+                  <input
+                    class="auth-input"
+                    type="text"
+                    name="userid"
+                    id="login-userid"
+                    placeholder="아이디 입력"
+                  />
+                  <input
+                    class="auth-input"
+                    type="password"
+                    name="password"
+                    id="login-password"
+                    placeholder="비밀번호 입력"
+                  />
+                </div>
+                <div class="btn-box">
+                  <button class="auth-button" type="submit" id="login-button">
+                    <strong>로그인하기</strong>
+                  </button>
+                  <button
+                    class="auth-button"
+                    onclick="location.href='/signup.html'"
+                  >
+                    <strong>회원가입</strong>
+                  </button>
+                </div>
+              </div>
+            </section>
           </div>
-          <div class="input-box">
-          <p>
-            <h2>아이디</h2>
-            <input
-              type="text"
-              name="userid"
-              id="login-userid"
-              placeholder="아이디를 입력하세요"
-            />
-          </p>
-          <p>
-            <h2>비밀번호</h2>
-            <input
-              type="password"
-              name="password"
-              id="login-password"
-              placeholder="비밀번호를 입력하세요"
-            />
-          </p>
-          <p><button type="submit" id="login-button">로그인하기</button></p>
         </div>
-          <p><h3>회원이 아니신가요?</h3><a href="/signup.html">회원가입하기</a></p>
-        
-      </div>
-    </main>
+      </main>
+      <div id="footer-placeholder"></div>
+    </div>
   </body>
 </html>

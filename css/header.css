@@ -20,7 +20,11 @@
   --color-lightgray: #dde2e6;
   --color-gray: #3d3d3d;
 }
+html {
+  height: 100%;
+}
 body {
+  height: 100%;
   background-color: var(--color-background);
 }
 a {
@@ -37,6 +41,7 @@ button {
 /* 헤더 다음 메인 태그 사용하기 */
 main {
   margin: 4rem 0;
+  flex: 1;
 }
 /* 내부 요소는 container로 감싸기 */
 .container {
@@ -100,6 +105,29 @@ main {
   border-radius: 8px;
   background-color: var(--color-line);
   transition: 0.2s ease-in-out;
+}
+.home__btn {
+  display: none;
+  background-color: transparent;
+  height: 2.4rem;
+  width: 5.4rem;
+  color: var(--color-text-main);
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  transition: border 0.3s ease;
+}
+.home__btn:hover {
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  background-color: var(--color-line);
+  transition: 0.2s ease-in-out;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* 모바일 */

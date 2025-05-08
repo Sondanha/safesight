@@ -1,0 +1,32 @@
+footer {
+  box-sizing: border-box;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--color-background);
+  border-top: 1px solid var(--color-line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+}
+footer p {
+  font-size: 0.7rem;
+}
+.footer__center {
+  display: flex;
+  align-items: center;
+}
+.footer__center img {
+  height: 1.5rem;
+}
+.footer__center h1 {
+  font-size: 0.8rem;
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  footer {
+    padding: 1rem 0.5rem;
+  }
+}

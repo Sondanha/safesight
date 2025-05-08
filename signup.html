@@ -4,43 +4,122 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>signup</title>
-
     <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/signup.css" />
+    <link rel="stylesheet" href="/css/login-signup.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
 
     <link rel="shortcut icon" href="./img/logo_i.ico" type="image/x-icon" />
-    
-    <script defer src="/js/header.js"></script>
-    <script defer src="/js/signup.js"></script>
-  </head>
 
+    <script defer src="/js/header.js"></script>
+    <script defer src="/js/login.js"></script>
+    <script defer src="/js/footer.js"></script>
+  </head>
   <body>
-    <div id="header-placeholder"></div>
-    <main>
-      <div class="container">
-        <div class="title">
-          <h1>회원가입</h1>
-        </div>
-        <div class="select__box">
-          <p>회원 유형을 선택해주세요</p>
-          <div class="select-membership">
-            <button class="select__button" id="select__business">사업장 가입</button>
-            <button class="select__button" id="select__common">일반 가입</button>
+    <div class="wrapper">
+      <div id="header-placeholder"></div>
+      <main class="main">
+        <div class="container">
+          <div class="display__flex">
+            <section class="section__left">
+              <div class="signup__box">
+                <div class="title-box">
+                  <h1>회원가입</h1>
+                </div>
+                <div class="bizNum-box">
+                  <h4>회원가입 유형을 선택하세요</h4>
+                  <div class="bizNum__btn-box">
+                    <button class="bizNum-button selectBiz">사업장 가입</button>
+                    <button class="bizNum-button selectNomal">일반 가입</button>
+                  </div>
+                </div>
+                <div class="input-box">
+                  <div class="signup-inputAndBtn display__column">
+                    <h4>사업장 관리번호</h4>
+                    <div class="display__column">
+                      <input
+                        class="input-bizNum signup-input"
+                        type=""
+                        name=""
+                        id=""
+                        maxlength="11"
+                        placeholder="11자의 숫자를 입력하시오."
+                      />
+                      <button id="verify-bizNum">인증</button>
+                    </div>
+                  </div>
+                  <div class="signup-inputAndBtn">
+                    <h4>아이디</h4>
+                    <input
+                      class="signup-input"
+                      type="text"
+                      name="userid"
+                      id="signup-userid"
+                      placeholder="4자 이상. 영문과 숫자 포함"
+                      maxlength="50"
+                    />
+                  </div>
+                  <div class="signup-inputAndBtn">
+                    <h4>비밀번호</h4>
+                    <input
+                      class="auth-input"
+                      type="password"
+                      name="password"
+                      id="signup-password"
+                      maxlength="50"
+                      placeholder="8자 이상. 특수문자 포함"
+                    />
+                  </div>
+                  <div class="signup-inputAndBtn">
+                    <h4>비밀번호 확인</h4>
+                    <input
+                      class="auth-input"
+                      type="password"
+                      name="password"
+                      id="signup-verifyPassword"
+                      maxlength="50"
+                      placeholder="동일한 비밀번호 입력"
+                    />
+                  </div>
+                  <div class="signup-inputAndBtn">
+                    <h4>이름</h4>
+                    <input
+                      class="auth-input"
+                      type="text"
+                      name="name"
+                      id="signup-name"
+                      maxlength="20"
+                      placeholder="이름 입력"
+                    />
+                  </div>
+                  <div class="signup-inputAndBtn">
+                    <h4>휴대폰 번호</h4>
+                    <input
+                      class="auth-input"
+                      type="text"
+                      name="phoneNumber"
+                      id="signup-phoneNumber"
+                      maxlength="11"
+                      placeholder="- (하이픈)을 제외한 11자 숫자"
+                    />
+                  </div>
+                </div>
+                <div class="btn-box">
+                  <button class="auth-button" type="submit" id="signup-button">
+                    <strong>회원가입하기</strong>
+                  </button>
+                  <button
+                    class="auth-button"
+                    onclick="location.href='/login.html'"
+                  >
+                    <strong>로그인하기</strong>
+                  </button>
+                </div>
+              </div>
+            </section>
           </div>
-        <div class="input__box">
-          <p><h2>사업장 관리번호</h2><input type="text" name="userid" id="signup-userid" /></p>
-        <p><h2>아이디</h2> <input type="text" name="userid" id="signup-userid" /></p>
-        <p>
-          <h2>비밀번호</h2>
-          <input type="password" name="password" id="signup-password" />
-        </p>
-        <p><h2>이름</h2> <input type="text" name="name" id="signup-name" /></p>
-        <p><h2>휴대전화</h2><input type="text" name="hp" id="hp" maxlength="20" /></p>
-        <p><h2>이메일</h2><input type="email" name="email" id="signup-email" /></p>
-        <p><button type="submit" id="signup-button">회원가입하기</button></p>
-      </div>
-        <p><h3>이미 회원이신가요?</h3> <a href="/login.html">로그인하기</a></p>
+        </div>
+      </main>
+      <div id="footer-placeholder"></div>
     </div>
-    </main>
   </body>
 </html>
