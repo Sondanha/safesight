@@ -62,15 +62,15 @@
   border: 2px solid var(--color-text-main);
 }
 .btn-box {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  gap: 0.4rem;
+  gap: 1rem;
 }
 .auth-button {
   width: 100%;
-  max-width: 16rem;
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
   border-radius: 4px;
@@ -79,9 +79,16 @@
   transition: background-color 0.3s ease;
 }
 .auth-button:hover {
+  box-shadow: none;
   background-color: var(--color-brightyellow);
 }
-
+.auth-button:active {
+  border: 2px solid var(--color-text-main);
+  box-shadow: none;
+}
+.max_width--16rem {
+  max-width: 16rem;
+}
 .input-box {
   margin: 1rem;
 }
@@ -117,14 +124,47 @@
   width: 100%;
   max-width: 16rem;
   padding: 0.6rem 0.4rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   border-radius: 4px;
   transition: background-color 0.3s ease;
 }
+.bizNum-button:hover {
+  background-color: var(--color-brightyellow);
+}
+
+.display__bizNum {
+  display: none;
+}
+.bizNum-button.active {
+  background-color: #333;
+  color: white;
+}
+.bizNum-button.active {
+  background-color: #333;
+  color: white;
+}
+
+.flex__direction--row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.input-bizNum {
+  flex: 4;
+}
+#verify-bizNum {
+  flex: 1;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
 .signup-inputAndBtn {
   width: 100%;
-  /* display: flex;
-  flex-direction: column; */
+  margin-top: 1rem;
+}
+.signup-inputAndBtn h4 {
+  margin-bottom: 0.5rem;
+  margin-left: 0.3rem;
 }
 .signup-input {
   width: 100%;
@@ -135,7 +175,7 @@
   outline: none;
   box-sizing: border-box;
 }
-.auth-input:focus {
+.signup-input:focus {
   border: 2px solid var(--color-text-main);
 }
 

@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="./img/logo_i.ico" type="image/x-icon" />
 
     <script defer src="/js/header.js"></script>
-    <script defer src="/js/login.js"></script>
+    <script defer src="/js/signup.js"></script>
     <script defer src="/js/footer.js"></script>
   </head>
   <body>
@@ -33,18 +33,20 @@
                   </div>
                 </div>
                 <div class="input-box">
-                  <div class="signup-inputAndBtn display__column">
-                    <h4>사업장 관리번호</h4>
-                    <div class="display__column">
-                      <input
-                        class="input-bizNum signup-input"
-                        type=""
-                        name=""
-                        id=""
-                        maxlength="11"
-                        placeholder="11자의 숫자를 입력하시오."
-                      />
-                      <button id="verify-bizNum">인증</button>
+                  <div class="display__bizNum">
+                    <div class="signup-inputAndBtn">
+                      <h4>사업장 관리번호</h4>
+                      <div class="flex__direction--row">
+                        <input
+                          class="input-bizNum signup-input"
+                          type=""
+                          name=""
+                          id=""
+                          maxlength="11"
+                          placeholder="11자의 숫자를 입력하세요"
+                        />
+                        <button id="verify-bizNum">인증</button>
+                      </div>
                     </div>
                   </div>
                   <div class="signup-inputAndBtn">
@@ -54,52 +56,52 @@
                       type="text"
                       name="userid"
                       id="signup-userid"
-                      placeholder="4자 이상. 영문과 숫자 포함"
+                      placeholder="영문자와 숫자를 포함하여 4자 이상 입력하세요"
                       maxlength="50"
                     />
                   </div>
                   <div class="signup-inputAndBtn">
                     <h4>비밀번호</h4>
                     <input
-                      class="auth-input"
+                      class="signup-input"
                       type="password"
                       name="password"
                       id="signup-password"
                       maxlength="50"
-                      placeholder="8자 이상. 특수문자 포함"
+                      placeholder="특수문자를 포함하여 8자 이상 입력하세요"
                     />
                   </div>
                   <div class="signup-inputAndBtn">
                     <h4>비밀번호 확인</h4>
                     <input
-                      class="auth-input"
+                      class="signup-input"
                       type="password"
                       name="password"
                       id="signup-verifyPassword"
                       maxlength="50"
-                      placeholder="동일한 비밀번호 입력"
+                      placeholder="위와 동일한 비밀번호를 입력하세요"
                     />
                   </div>
                   <div class="signup-inputAndBtn">
                     <h4>이름</h4>
                     <input
-                      class="auth-input"
+                      class="signup-input"
                       type="text"
                       name="name"
                       id="signup-name"
                       maxlength="20"
-                      placeholder="이름 입력"
+                      placeholder="이름을 입력하세요"
                     />
                   </div>
                   <div class="signup-inputAndBtn">
                     <h4>휴대폰 번호</h4>
                     <input
-                      class="auth-input"
+                      class="signup-input"
                       type="text"
                       name="phoneNumber"
                       id="signup-phoneNumber"
                       maxlength="11"
-                      placeholder="- (하이픈)을 제외한 11자 숫자"
+                      placeholder="- (하이픈)을 제외한 11자 숫자를 입력하세요"
                     />
                   </div>
                 </div>
