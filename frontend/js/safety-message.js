@@ -33,5 +33,5 @@ function rotateMessage() {
 }
 
 rotateMessage();
-// 20초마다 변경
+
 setInterval(rotateMessage, 20000);

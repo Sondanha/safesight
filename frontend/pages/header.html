@@ -1,17 +1,27 @@
 <header class="header">
   <div class="header--left">
-    <a class="header__logo" href="/index.html">
+    <a class="header__logo" href="./index.html">
       <img class="header__logo__img" src="../img/logo.png" alt="상단 로고" />
     </a>
-    <a href="index.html">
+    <a href="./index.html">
       <h1 class="header__title">Safe Sight</h1>
     </a>
   </div>
   <div class="header--right">
-    <button class="home__btn" onclick="location.href='/index.html'">
+    <button class="home__btn" onclick="location.href='./index.html'">
       홈으로
     </button>
     <button class="header__btn" id="loginBtn">로그인</button>
     <button class="header__btn" id="signupBtn">회원가입</button>
+    <form action="/auth/logout" method="POST" style="display: inline">
+      <button
+        class="header__btn"
+        id="logoutBtn"
+        type="submit"
+        style="display: none"
+      >
+        로그아웃
+      </button>
+    </form>
   </div>
 </header>

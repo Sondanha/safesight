@@ -1,5 +1,5 @@
 // 기상청 제공 공식 변환 로직 (위경도 -> nx, ny)
-function toXY(lat, lon) {
+export function toXY(lat, lon) {
   const RE = 6371.00877; // 지구 반지름 (km)
   const GRID = 5.0; // 격자 간격 (km)
   const SLAT1 = 30.0; // 투영 위도1(degree)

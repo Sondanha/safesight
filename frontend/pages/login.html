@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login</title>
-    <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/login-signup.css" />
-    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/login-signup.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
 
-    <link rel="shortcut icon" href="./img/logo_i.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../img/logo_i.ico" type="image/x-icon" />
 
-    <script defer src="/js/header.js"></script>
-    <script defer src="/js/login.js"></script>
-    <script defer src="/js/footer.js"></script>
+    <script defer src="../js/header.js"></script>
+    <script defer src="../js/login.js"></script>
+    <script defer src="../js/footer.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -29,7 +29,7 @@
             </section>
 
             <section class="section__left">
-              <div class="login__box">
+              <form action="/auth/login" method="POST" class="login__box">
                 <div class="title-box">
                   <h1>로그인</h1>
                 </div>
@@ -40,6 +40,7 @@
                     name="userid"
                     id="login-userid"
                     placeholder="아이디 입력"
+                    required
                   />
                   <input
                     class="auth-input"
@@ -47,6 +48,7 @@
                     name="password"
                     id="login-password"
                     placeholder="비밀번호 입력"
+                    required
                   />
                 </div>
                 <div class="btn-box">
@@ -59,12 +61,13 @@
                   </button>
                   <button
                     class="auth-button max_width--16rem"
-                    onclick="location.href='/signup.html'"
+                    type="button"
+                    onclick="location.href='./signup.html'"
                   >
                     <strong>회원가입</strong>
                   </button>
                 </div>
-              </div>
+              </form>
             </section>
           </div>
         </div>

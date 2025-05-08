@@ -6,9 +6,9 @@
     <title>signup</title>
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/login-signup.css" />
-    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
 
-    <link rel="shortcut icon" href="./img/logo_i.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/img/logo_i.ico" type="image/x-icon" />
 
     <script defer src="/js/header.js"></script>
     <script defer src="/js/signup.js"></script>
@@ -21,45 +21,60 @@
         <div class="container">
           <div class="display__flex">
             <section class="section__left">
-              <div class="signup__box">
+              <form action="/auth/signup" method="POST" class="signup__box">
                 <div class="title-box">
                   <h1>회원가입</h1>
                 </div>
+
                 <div class="bizNum-box">
                   <h4>회원가입 유형을 선택하세요</h4>
                   <div class="bizNum__btn-box">
-                    <button class="bizNum-button selectBiz">사업장 가입</button>
-                    <button class="bizNum-button selectNomal">일반 가입</button>
+                    <button type="button" class="bizNum-button selectBiz">
+                      사업장 가입
+                    </button>
+                    <button type="button" class="bizNum-button selectNomal">
+                      일반 가입
+                    </button>
                   </div>
                 </div>
+
                 <div class="input-box">
-                  <div class="display__bizNum">
+                  <div class="display__bizNum" style="display: none">
                     <div class="signup-inputAndBtn">
                       <h4>사업장 관리번호</h4>
                       <div class="flex__direction--row">
                         <input
                           class="input-bizNum signup-input"
-                          type=""
-                          name=""
-                          id=""
+                          type="text"
+                          name="bizNum"
+                          id="bizNum"
                           maxlength="11"
                           placeholder="11자의 숫자를 입력하세요"
                         />
-                        <button id="verify-bizNum">인증</button>
+                        <button type="button" id="verify-bizNum">인증</button>
                       </div>
                     </div>
                   </div>
+
                   <div class="signup-inputAndBtn">
                     <h4>아이디</h4>
-                    <input
-                      class="signup-input"
-                      type="text"
-                      name="userid"
-                      id="signup-userid"
-                      placeholder="영문자와 숫자를 포함하여 4자 이상 입력하세요"
-                      maxlength="50"
-                    />
+                    <div class="flex__direction--row">
+                      <input
+                        class="signup-input"
+                        type="text"
+                        name="userid"
+                        id="signup-userid"
+                        placeholder="영문자와 숫자를 포함하여 4자 이상 입력하세요"
+                        maxlength="50"
+                        required
+                      />
+                      <button type="button" id="check-userid-btn">
+                        중복 확인
+                      </button>
+                    </div>
+                    <p id="check-userid-msg" class="check-msg"></p>
                   </div>
+
                   <div class="signup-inputAndBtn">
                     <h4>비밀번호</h4>
                     <input
@@ -69,19 +84,23 @@
                       id="signup-password"
                       maxlength="50"
                       placeholder="특수문자를 포함하여 8자 이상 입력하세요"
+                      required
                     />
                   </div>
+
                   <div class="signup-inputAndBtn">
                     <h4>비밀번호 확인</h4>
                     <input
                       class="signup-input"
                       type="password"
-                      name="password"
+                      name="verifyPassword"
                       id="signup-verifyPassword"
                       maxlength="50"
                       placeholder="위와 동일한 비밀번호를 입력하세요"
+                      required
                     />
                   </div>
+
                   <div class="signup-inputAndBtn">
                     <h4>이름</h4>
                     <input
@@ -91,8 +110,10 @@
                       id="signup-name"
                       maxlength="20"
                       placeholder="이름을 입력하세요"
+                      required
                     />
                   </div>
+
                   <div class="signup-inputAndBtn">
                     <h4>휴대폰 번호</h4>
                     <input
@@ -102,21 +123,24 @@
                       id="signup-phoneNumber"
                       maxlength="11"
                       placeholder="- (하이픈)을 제외한 11자 숫자를 입력하세요"
+                      required
                     />
                   </div>
                 </div>
+
                 <div class="btn-box">
                   <button class="auth-button" type="submit" id="signup-button">
                     <strong>회원가입하기</strong>
                   </button>
                   <button
                     class="auth-button"
-                    onclick="location.href='/login.html'"
+                    type="button"
+                    onclick="location.href='/pages/login.html'"
                   >
                     <strong>로그인하기</strong>
                   </button>
                 </div>
-              </div>
+              </form>
             </section>
           </div>
         </div>
