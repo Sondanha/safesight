@@ -6,20 +6,21 @@ import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 
-import authRouter from "./routes/auth.mjs";
-import postRouter from "./routes/post.mjs";
+import authRouter from "./backend/routes/auth.mjs";
+import postRouter from "./backend/routes/post.mjs";
 
-import newsRouter from "./routes/news.mjs";
-import regionRouter from "./routes/region.mjs";
-import weatherRouter from "./routes/weather.mjs";
+import newsRouter from "./backend/routes/news.mjs";
+import regionRouter from "./backend/routes/region.mjs";
+import weatherRouter from "./backend/routes/weather.mjs";
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-app.use(express.static(path.join(__dirname, "../frontend")));
+app.use(express.static(path.join(__dirname, "frontend")));
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
 
@@ -31,26 +32,13 @@ app.use("/api/region", regionRouter);
 app.use("/api/weather", weatherRouter);
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/pages/index.html"));
+  res.sendFile(path.join(__dirname, "frontend/pages/index.html"));
 });
 
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB connected"))
   .catch((err) => console.error("❌ MongoDB 연결 실패:", err));
-
-// (선택) 테스트용 라우트 - 필요 시만 유지
-/*
-import User from "./models/user.js";
-app.get("/create-test-user", async (req, res) => {
-  try {
-    const user = await User.create({ userid: "testuser", password: "1234" });
-    res.json({ message: "유저 생성 완료", user });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-*/
 
 app.listen(PORT, () => {
   console.log(`✅ 서버 실행됨: http://localhost:${PORT}`);
