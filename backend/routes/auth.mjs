@@ -40,7 +40,7 @@ router.post("/signup", async (req, res) => {
       bizNum,
     });
 
-    res.redirect("/login.html");
+    res.redirect("/pages/login.html");
   } catch (err) {
     console.error(err);
     res.status(500).send("회원가입 중 서버 오류");
