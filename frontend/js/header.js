@@ -47,11 +47,20 @@ fetch("/pages/header.html")
     signupBtn?.addEventListener("click", () => {
       window.location.href = "/pages/signup.html";
     });
-    logoutBtn?.addEventListener("click", () => {
+
+    logoutBtn?.addEventListener("click", async () => {
+      try {
+        await fetch("/auth/logout", { method: "POST" });
+      } catch (e) {
+        console.error("서버 로그아웃 실패", e);
+      }
+
       localStorage.removeItem("token");
       localStorage.removeItem("user");
+
       alert("로그아웃 되었습니다.");
-      window.location.href = "/pages/index.html";
+
+      window.location.href = "/index.html";
     });
   })
   .catch((err) => console.log("헤더 로딩 실패", err));

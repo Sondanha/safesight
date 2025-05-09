@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
 
   try {
     const url = `https://dapi.kakao.com/v2/local/geo/coord2regioncode.json?x=${lon}&y=${lat}`;
-    console.log("Kakao API 요청 URL:", url); // ✅ 여기에 있어야 함
+    console.log("Kakao API 요청 URL:", url);
 
     const kakaoRes = await fetch(url, {
       headers: {
@@ -21,7 +21,7 @@ router.get("/", async (req, res) => {
     });
 
     const data = await kakaoRes.json();
-    console.log("Kakao 응답:", data); // ✅ 여기에 있어야 함
+    console.log("Kakao 응답:", data);
 
     if (!data.documents || data.documents.length === 0) {
       return res.status(404).json({ error: "지역 정보를 찾을 수 없습니다." });
