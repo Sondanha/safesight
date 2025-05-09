@@ -51,7 +51,7 @@ fetch("/pages/header.html")
       localStorage.removeItem("token");
       localStorage.removeItem("user");
       alert("로그아웃 되었습니다.");
-      location.href = "/pages/index.html";
+      window.location.href = "/pages/index.html";
     });
   })
   .catch((err) => console.log("헤더 로딩 실패", err));
