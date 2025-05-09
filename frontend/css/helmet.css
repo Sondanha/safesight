@@ -1,16 +1,9 @@
-main {
-  margin-top: 100px;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .helmet-title {
   text-align: center;
   margin-bottom: 40px;
-  font-size: 22px;
+  font-size: 1.6rem;
   font-weight: bold;
-  color: #333;
+  color: var(--color-text-main);
 }
 
 /* top-container */
@@ -25,11 +18,11 @@ main {
 
 .img-box,
 .video-box {
-  width: calc(50% - 15px); /* 아래 박스들과 가로폭 일치 */
+  width: calc(50% - 15px);
   height: 315px;
   border-radius: 8px;
   overflow: hidden;
-  background-color: #f0f0f0;
+  background-color: var(--color-box);
 }
 
 .img-box img {
@@ -58,7 +51,7 @@ main {
   width: 100%;
   min-height: 200px;
   padding: 20px;
-  background-color: #f8f9fa;
+  background-color: var(--color-box);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
@@ -67,7 +60,7 @@ main {
   text-align: center;
   font-size: 22px;
   font-weight: bold;
-  color: #333;
+  color: var(--color-text);
 }
 
 .box-content {

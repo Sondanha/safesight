@@ -9,6 +9,7 @@ export const SAFETY_GUIDELINES = {
   무너짐: "가시설 및 흙막이 지지 상태 사전 점검",
   감전: "전기 작업 전 차단 확인 및 절연 장비 착용",
   폭발: "밀폐공간 내 가스 농도 측정 및 환기 필수",
+  쓰러짐: "중량물이나 구조물 주변 작업 시 지지대 설치 및 고정 확인",
 };
 
 export function getSafetyGuidelineFromDescription(description) {
