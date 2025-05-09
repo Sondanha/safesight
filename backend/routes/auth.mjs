@@ -81,6 +81,12 @@ router.post("/login", async (req, res) => {
   res.json({ message: "로그인 성공", token });
 });
 
+// 로그아웃
+router.post("/logout", (req, res) => {
+  res.status(200).json({ message: "로그아웃 완료" });
+});
+
+// 로그인 상태
 router.get("/me", (req, res) => {
   const authHeader = req.headers.authorization;
   const token = authHeader?.split(" ")[1];
