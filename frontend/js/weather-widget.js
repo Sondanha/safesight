@@ -1,26 +1,33 @@
 import { toXY } from "./grid-util.js";
+import { getRegionNameViaProxy } from "./region-proxy.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadWeather();
-});
-
-async function loadWeather() {
   const container = document.getElementById("weather-widget");
   if (!container) return;
 
   navigator.geolocation.getCurrentPosition(
-    (pos) => {
+    async (pos) => {
       const { latitude, longitude } = pos.coords;
-      fetchWeather(latitude, longitude, container);
+      await renderWidget(latitude, longitude, container);
     },
-    () => {
-      console.warn("위치 권한 거부됨 → 서울로 대체");
-      fetchWeather(37.5665, 126.978, container);
+    async () => {
+      console.warn("위치 권한 거부됨 → 서울 기준 사용");
+      await renderWidget(37.5665, 126.978, container); // 서울
     }
   );
+});
+
+async function renderWidget(lat, lon, container) {
+  const regionName = await getRegionNameViaProxy(lat, lon);
+  const weatherHTML = await getWeatherHTML(lat, lon);
+
+  container.innerHTML = `
+   <div class="weather-regionName">📍 ${regionName}</div>
+   <div class="weather-now">${weatherHTML}</div>
+   `;
 }
 
-async function fetchWeather(lat, lon, container) {
+async function getWeatherHTML(lat, lon) {
   const { nx, ny } = toXY(lat, lon);
   const baseDate = getBaseDate();
   const baseTime = getBaseTime();
@@ -44,10 +51,10 @@ async function fetchWeather(lat, lon, container) {
     });
 
     const { icon, label } = getWeatherStatus(sky, pty, t1h);
-    container.innerHTML = `<div class="weather-now">📍 현재 날씨: ${icon} ${label}</div>`;
+    return `${icon} ${label}`;
   } catch (err) {
     console.error("날씨 위젯 오류:", err);
-    container.innerText = "❗ 날씨 로딩 실패";
+    return "❗ 날씨 로딩 실패";
   }
 }
 
