@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginBtn = document.getElementById("login-button");
 
   loginBtn.addEventListener("click", async (e) => {
-    e.preventDefault(); // 폼 기본 제출 방지
+    e.preventDefault();
 
     const userid = document.getElementById("login-userid")?.value.trim();
     const password = document.getElementById("login-password")?.value.trim();
@@ -28,15 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // 토큰 저장
+      // 토큰과 유저 정보 저장
       localStorage.setItem("token", data.token);
-      localStorage.setItem(
-        "user",
-        JSON.stringify({ userid: data.userid, name: data.name })
-      );
+      localStorage.setItem("user", JSON.stringify(data.user));
 
       alert("로그인 성공!");
-      location.href = "/"; // 로그인 후 홈으로 이동
+      location.href = "/";
     } catch (err) {
       console.error("로그인 오류:", err);
       alert("서버 오류로 로그인에 실패했습니다.");

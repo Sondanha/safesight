@@ -178,6 +178,24 @@
 .signup-input:focus {
   border: 2px solid var(--color-text-main);
 }
+#check-userid-btn {
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+#check-userid-btn:hover {
+  background-color: var(--color-brightyellow);
+}
+#check-userid-btn.active {
+  background-color: #333;
+  color: white;
+}
+#check-userid-btn span {
+  font-weight: bold;
+  font-size: 0.8rem;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
 
 /* 태블릿 */
 @media (max-width: 1023px) and (min-width: 767px) {

@@ -63,7 +63,16 @@
 
 /* 보호구 */
 .main__gear {
-  margin-top: 2rem;
+  margin-top: 1rem;
+  border: 1px solid black;
+}
+.main__gear__title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.main__gear__title h5 {
+  color: var(--color-text-main);
 }
 .main__gear__container {
   width: 100%;
@@ -219,7 +228,7 @@ a:hover .gear__title {
 
 /* 날씨 */
 #weather-widget {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   display: flex;
   flex-direction: column;
@@ -231,10 +240,12 @@ a:hover .gear__title {
 .weather-regionName {
   font-weight: bold;
   white-space: nowrap;
+  margin-bottom: 0.1rem;
 }
 .weather-now {
   text-align: center;
   word-break: keep-all;
+  margin-top: 0.1rem;
 }
 
 /* 안전 메시지 */

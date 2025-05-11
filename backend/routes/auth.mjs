@@ -78,7 +78,15 @@ router.post("/login", async (req, res) => {
 
   const token = jwt.sign({ userid }, process.env.JWT_SECRET);
 
-  res.json({ message: "로그인 성공", token });
+  res.json({
+    message: "로그인 성공",
+    token,
+    user: {
+      userid: user.userid,
+      _id: user._id,
+      name: user.name,
+    },
+  });
 });
 
 // 로그아웃
