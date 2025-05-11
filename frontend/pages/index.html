@@ -25,9 +25,13 @@
         <section class="top__section">
           <div class="container">
             <div class="top__box">
-              <h1 class="top__title">
-                <strong>Safe Sight</strong> 와<br />당신의 안전을 확인하세요
-              </h1>
+              <div class="top__title">
+                <h5>
+                  <span>카메라</span>로 빠르게, <span>안전</span>을 정확하게!
+                </h5>
+                <h3><strong>Safe Sight</strong>와</h3>
+                <h4>당신의 안전을 확인하세요</h4>
+              </div>
               <img class="top__img" src="../img/men.png" alt="작업자" />
             </div>
           </div>
@@ -109,18 +113,12 @@
                 <div class="main__side__container">
                   <div class="news">
                     <div id="news-widget"></div>
-                    <div id="safety-guideline-widget"></div>
                   </div>
                 </div>
 
                 <div class="main__side__container">
-                  <div class="community">
-                    <a
-                      class="community"
-                      href="/pages/community.html"
-                      class="auth-button"
-                      >커뮤니티</a
-                    >
+                  <div class="news">
+                    <div id="safety-guideline-widget"></div>
                   </div>
                 </div>
               </aside>
@@ -132,6 +130,22 @@
                     target="_blank"
                     class="preview__link"
                   ></a>
+                  <div class="preview__overlay">
+                    <h3 class="preview__title">
+                      <strong>카메라</strong>가 당신의 보호구를 인식합니다.
+                    </h3>
+                    <p class="preview__desc">
+                      Safe Sight는 <strong>컴퓨터 비전 기술</strong>을 활용해<br />
+                      카메라로
+                      <strong>보호구 착용 여부를 자동 인식</strong>합니다.<br />
+
+                      작업 종류에 따라 필요한 보호구를 확인하고,
+                      <br />작업자의 안전 상태를 점검해보세요.
+                    </p>
+                    <span class="preview__hint glow"
+                      >▶ 클릭하여 안전 상태를 확인하세요</span
+                    >
+                  </div>
                   <iframe
                     src="https://safesight-app.fly.dev/"
                     frameborder="0"
@@ -156,13 +170,25 @@
 
         <section class="bottom__section">
           <div class="container">
-            <div class="bottom__box"></div>
+            <div class="main__side__container">
+              <div class="community__box">
+                <h3>💬 커뮤니티</h3>
+                <p class="community__desc">
+                  이곳에서 안전에 관한 경험과 정보를 공유해보세요!
+                </p>
+                <div id="community-preview"></div>
+                <a href="/pages/community.html" class="community__more"
+                  >▶ 전체글 확인</a
+                >
+              </div>
+            </div>
           </div>
         </section>
       </main>
 
       <div id="footer-placeholder"></div>
 
+      <script type="module" src="/js/index.js"></script>
       <script type="module" src="/js/news-widget.js"></script>
       <script type="module" src="/js/weather-widget.js"></script>
     </div>

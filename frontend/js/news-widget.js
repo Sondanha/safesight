@@ -39,7 +39,8 @@ async function loadNews() {
     const description = match?.[2] ?? latest.keyword;
 
     widget.innerHTML = `
-      <div class="news-location">📰 ${location}</div>
+    <div class="news-widget-title">[안전 사고 뉴스]</div>
+      <div class="news-location">${location}</div>
       <div class="news-description">${description}</div>
     `;
 
@@ -65,7 +66,7 @@ function renderGuidelineTo(container, guideline) {
   if (!container || !guideline) return;
 
   container.innerHTML = `
-    <div class="news-guideline-title">[오늘의 안전 수칙]</div>
+    <div class="news-widget-title">[오늘의 안전 수칙]</div>
     <div class="news-guideline">${guideline}</div>
   `;
 }

@@ -7,9 +7,25 @@
   justify-content: space-around;
 }
 .top__title {
+  display: flex;
+  flex-direction: column;
   word-break: keep-all;
-  margin-top: 3rem;
-  font-size: 2rem;
+  margin-top: 2.5rem;
+}
+.top__title h5 {
+  color: var(--color-text-main);
+  font-size: 0.9rem;
+}
+.top__title h3 {
+  color: var(--color-text-main);
+  font-size: 1.9rem;
+}
+.top__title h4 {
+  color: var(--color-text-main);
+  font-size: 1.8rem;
+}
+.top__title span {
+  color: var(--color-accent);
 }
 .top__img {
   height: 12rem;
@@ -85,26 +101,33 @@ a:hover .gear__title {
   visibility: visible;
 }
 
-/* 뉴스 */
+/* 뉴스 공통*/
+.news-widget-title {
+  font-weight: bold;
+  color: red;
+}
+
+/* 뉴스 API 위젯 */
 #news-widget {
   font-size: 1.2rem;
   font-weight: 500;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.2rem;
   line-height: 1.4;
   color: var(--color-text-main);
 }
 .news-location {
   font-weight: bold;
+  word-break: keep-all;
 }
 .news-description {
   text-align: center;
   word-break: keep-all;
 }
 
-/* 매핑된 안전수칙 */
+/* 안전수칙 매핑 위젯 */
 #safety-guideline-widget {
   font-size: 1.2rem;
   font-weight: 500;
@@ -113,10 +136,6 @@ a:hover .gear__title {
   align-items: center;
   gap: 0.5rem;
   line-height: 1.4;
-}
-.news-guideline-title {
-  font-weight: bold;
-  color: red;
 }
 .news-guideline {
   color: var(--color-text-main);
@@ -145,6 +164,57 @@ a:hover .gear__title {
   width: 100%;
   height: 100%;
   z-index: 10;
+}
+/* 오버레이 설명 */
+.preview__overlay {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  pointer-events: none; /* 클릭 방지 */
+}
+.preview__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  word-break: keep-all;
+}
+.preview__desc {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  word-break: keep-all;
+}
+.preview__hint {
+  font-size: 0.9rem;
+  color: #cfa63d;
+  word-break: keep-all;
+}
+.preview__hint.glow {
+  animation: glowSoft 2s ease-in-out infinite;
+  color: #fdd835;
+  font-weight: bold;
+}
+@keyframes glowSoft {
+  0% {
+    text-shadow: 0 0 4px #fdd835, 0 0 6px #fbc02d;
+  }
+  50% {
+    text-shadow: 0 0 8px #fdd835, 0 0 12px #fbc02d;
+  }
+  100% {
+    text-shadow: 0 0 4px #fdd835, 0 0 6px #fbc02d;
+  }
 }
 
 /* 날씨 */
@@ -180,87 +250,49 @@ a:hover .gear__title {
   opacity: 0;
 }
 
-/* 하단 응원 메시지 */
+/* 커뮤니티 */
 .bottom__section {
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
-.bottom__box {
-  display: flex;
-  justify-content: center;
+.community__box {
+  padding: 1rem;
+  border-radius: 8px;
+}
+.community__desc {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+.preview-post {
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;
+}
+.preview-author {
+  font-weight: bold;
+  color: #333;
+}
+.preview-content {
+  margin: 0.3rem 0;
+}
+.preview-time {
+  font-size: 0.8rem;
+  color: #666;
+}
+.community__more {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: var(--color-accent);
+  text-decoration: none;
 }
 
-/* 모바일 */
-@media (max-width: 767px) {
-  .main__gear {
-    margin-top: 0;
-  }
-  .main__gear__container {
-    display: none;
-  }
+/* 모바일 + 태블릿 공통 */
+@media (max-width: 1023px) {
   .main__box {
     flex-direction: column;
     align-items: stretch;
   }
-  .main__middle {
-    order: 1;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: none;
-  }
-  .preview__container {
-    width: 100%;
-    max-width: none;
-    height: 25rem;
-    aspect-ratio: 16 / 9;
-  }
-  .main__side {
-    flex-direction: row;
-    width: 100%;
-    max-width: none;
-  }
-  .main__side:first-of-type {
-    order: 2;
-  }
-  .main__side:last-of-type {
-    order: 3;
-  }
-  .main__side {
-    flex-direction: column;
-  }
-}
-
-/* 태블릿 */
-@media (max-width: 1023px) and (min-width: 767px) {
-  .main__box {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .main__middle {
-    order: 1;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: none;
-  }
-  .preview__container {
-    width: 100%;
-    max-width: none;
-    height: auto;
-    aspect-ratio: 16 / 9;
-  }
-  .main__side {
-    flex-direction: row;
-    width: 100%;
-    max-width: none;
-  }
-  .main__side:first-of-type {
-    order: 2;
-  }
-  .main__side:last-of-type {
-    order: 3;
-  }
-
+  /* 보호구 */
   .main__gear__container {
     display: flex;
     flex-direction: column;
@@ -280,5 +312,51 @@ a:hover .gear__title {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  /* 뉴스 날씨 위젯 */
+  .main__side {
+    flex-direction: row;
+    width: 100%;
+    max-width: none;
+  }
+  .main__side:first-of-type {
+    order: 2;
+  }
+  .main__side:last-of-type {
+    order: 3;
+  }
+  /* 커뮤니티 위젯 */
+  .bottom__section {
+    margin-top: 1rem;
+  }
+}
+
+/* 모바일 전용 */
+@media (max-width: 767px) {
+  .preview__container {
+    display: none;
+  }
+  .main__side {
+    flex-direction: column;
+  }
+  .top__title {
+    margin-top: 0.3rem;
+  }
+}
+
+/* 태블릿 전용 */
+@media (max-width: 1023px) and (min-width: 767px) {
+  .main__middle {
+    order: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: none;
+  }
+  .preview__container {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 }

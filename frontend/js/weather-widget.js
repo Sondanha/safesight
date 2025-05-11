@@ -23,7 +23,7 @@ async function renderWidget(lat, lon, container) {
 
   container.innerHTML = `
    <div class="weather-regionName">📍 ${regionName}</div>
-   <div class="weather-now">${weatherHTML}</div>
+   <div class="weather-now">현재 날씨: ${weatherHTML}</div>
    `;
 }
 
