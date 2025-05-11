@@ -64,7 +64,6 @@
 /* 보호구 */
 .main__gear {
   margin-top: 1rem;
-  border: 1px solid black;
 }
 .main__gear__title {
   display: flex;
@@ -267,14 +266,20 @@ a:hover .gear__title {
   margin-top: 2rem;
 }
 .community__box {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  margin-top: 2rem;
   padding: 1rem;
   border-radius: 8px;
 }
+.community__box h3 {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 0.3rem;
+}
 .community__desc {
   font-size: 0.95rem;
-  color: #444;
+  color: var(--color-text-main);
   margin-bottom: 0.5rem;
 }
 .preview-post {
