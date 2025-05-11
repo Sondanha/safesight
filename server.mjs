@@ -12,7 +12,11 @@ import newsRouter from "./backend/routes/news.mjs";
 import regionRouter from "./backend/routes/region.mjs";
 import weatherRouter from "./backend/routes/weather.mjs";
 
+// 배포 시
 dotenv.config();
+
+// 로컬 테스트 시 백엔드 연결
+// dotenv.config({ path: "./backend/.env" });
 
 const app = express();
 const PORT = process.env.PORT || 3000;

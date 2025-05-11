@@ -20,6 +20,13 @@ router.get("/", async (req, res) => {
       },
     });
 
+    if (!kakaoRes.ok) {
+      console.error("카카오 응답 실패 상태코드:", kakaoRes.status);
+      return res
+        .status(kakaoRes.status)
+        .json({ error: "카카오 API 응답 오류" });
+    }
+
     const data = await kakaoRes.json();
     console.log("Kakao 응답:", data);
 

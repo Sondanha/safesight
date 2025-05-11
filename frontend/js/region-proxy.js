@@ -1,8 +1,11 @@
+const BASE_URL =
+  location.hostname === "localhost"
+    ? "http://localhost:3001"
+    : "https://YOUR_DEPLOYED_DOMAIN";
+
 export async function getRegionNameViaProxy(lat, lon) {
   try {
-    const res = await fetch(
-      `http://localhost:3001/api/region?lat=${lat}&lon=${lon}`
-    );
+    const res = await fetch(`${BASE_URL}/api/region?lat=${lat}&lon=${lon}`);
     if (!res.ok) throw new Error("지역명 요청 실패");
 
     const data = await res.json();
