@@ -1,7 +1,7 @@
 const BASE_URL =
   location.hostname === "localhost"
     ? "http://localhost:3001"
-    : "https://YOUR_DEPLOYED_DOMAIN";
+    : "https://port-0-safesight-mafj169l51db220c.sel4.cloudtype.app/";
 
 export async function getRegionNameViaProxy(lat, lon) {
   try {
