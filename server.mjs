@@ -23,7 +23,9 @@ const PORT = process.env.PORT || 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-app.use(cors({ origin: true, credentials: true }));
+app.use(
+  cors({ origin: "https://yourfrontend.cloudtype.app", credentials: true })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
