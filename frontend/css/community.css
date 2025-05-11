@@ -4,7 +4,15 @@
 }
 
 #post-form {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
   margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 #post-form textarea {
@@ -16,8 +24,19 @@
 }
 
 #post-form button {
-  margin-top: 0.5rem;
-  padding: 0.5rem 1rem;
+  align-self: flex-end;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: bold;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+#post-form button:hover {
+  background-color: #1565c0;
 }
 
 .post {

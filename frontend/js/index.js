@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("/post")
     .then((res) => res.json())
     .then((posts) => {
-      const previewPosts = posts.slice(0, 3); // 최신 글 3개
+      const previewPosts = posts.slice(0, 5); // 최신 글 3개
       previewContainer.innerHTML = previewPosts
         .map(
           (post) => `
