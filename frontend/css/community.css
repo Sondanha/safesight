@@ -1,10 +1,11 @@
 .title__box {
   margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 #post-form {
   background-color: var(--color-box);
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-line);
   border-radius: 8px;
   padding: 1rem;
   margin-bottom: 2rem;
@@ -40,11 +41,11 @@
 }
 
 .post {
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-line);
   border-radius: 8px;
   padding: 1rem;
   margin-bottom: 1rem;
-  background-color: #f9f9f9;
+  background-color: var(--color-box);
 }
 
 .post-author {
@@ -63,6 +64,7 @@
 .post-actions {
   display: flex;
   justify-content: end;
+  gap: 0.2rem;
 }
 
 .edit-post,
@@ -72,14 +74,13 @@
   font-size: 0.8rem;
   background-color: transparent;
   border: 1px solid var(--color-line);
-  border-radius: 8px;
+  border-radius: 6px;
   color: var(--color-text-main);
 }
 
-.edit-post,
+.edit-post:hover,
 .delete-post:hover {
   border: 1px solid var(--color-line);
-  border-radius: 8px;
   background-color: var(--color-line);
   transition: 0.2s ease-in-out;
 }
