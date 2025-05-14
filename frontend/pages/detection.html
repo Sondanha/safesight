@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SafeSight Detection</title>
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/detection.css" />
+
+    <link rel="shortcut icon" href="../img/logo_i.ico" type="image/x-icon" />
+
+    <script defer src="../js/header.js"></script>
+    <script defer src="../js/detection.js"></script>
+  </head>
+  <body>
+    <div class="wrapper--detection">
+      <div id="header-placeholder"></div>
+      <main class="main">
+        <div class="container">
+          <section class="section__title">
+            <h1 class="title__first">
+              <span>Safe Sight</span>가 <span>보호구</span>를
+              <span>인식</span>합니다
+            </h1>
+            <h3 class="title__second">🔴정면의 카메라를 응시해주세요!</h3>
+            <div class="title__third">
+              <div>👇보호장비 착용을 실시간으로 확인합니다.</div>
+              <div>👇보호장비를 착용한 작업자를 기록합니다.</div>
+            </div>
+          </section>
+
+          <section class="section__contents">
+            <div class="left--box">
+              <div class="left--section">
+                <div class="input--box">
+                  <div class="task__select">
+                    <label class="task__select__label" for="task"
+                      >🏗️ 작업 종류를 선택하세요</label
+                    >
+                    <select id="task" class="task__select__dropdown">
+                      <option value="highplace">🪜고소 작업</option>
+                      <option value="welding">🔥용접 작업</option>
+                      <option value="electrical">🔌전기 작업</option>
+                    </select>
+
+                    <button class="startBtn" id="startBtn">감지 시작</button>
+                  </div>
+                </div>
+                <div class="output--box">
+                  <div class="violations">
+                    <img id="output" alt="Detection Output" />
+                    <ul id="violationsList"></ul>
+                  </div>
+                  <div class="videoAndCanvas">
+                    <video id="video" autoplay playsinline></video>
+                    <canvas id="canvas"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="right--box">
+              <div class="right--section">
+                <div class="right--section__text">
+                  <h2>✏️관리자 체크리스트</h2>
+                  <p>
+                    안전장비 착용이 완료된 작업자의 이름을 입력하세요. (승인
+                    버튼을 누르면 시간과 이름이 자동으로 기록됩니다)
+                  </p>
+                  <div class="right--inputAndBtn">
+                    <input
+                      type="text"
+                      id="noteInput"
+                      placeholder="작업자 등록"
+                    />
+                    <button onclick="saveNote()">승인</button>
+                  </div>
+                </div>
+                <ul id="noteList"></ul>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
